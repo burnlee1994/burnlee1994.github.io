@@ -241,11 +241,10 @@ mark {
 }
 
 .bg-color {
-background-color: #000000;
-background-image: -webkit-linear-gradient(225deg, #000000 0%, #1a121a 30%, #161414 66%, #0a0808 100%);
-background-image: -moz-linear-gradient(225deg, #000000 0%, #1a121a 30%, #161414 66%, #0a0808 100%);
-background-image: -o-linear-gradient(225deg, #000000 0%, #1a121a 30%, #161414 66%, #0a0808 100%);
-background-image: linear-gradient(225deg, #000000 0%, #1a121a 30%, #161414 66%, #0a0808 100%);
+background-color: #1a121a;
+background-image: -webkit-linear-gradient(225deg, #1a121a 0%, #161414 100%);
+
+
 
 }
 
