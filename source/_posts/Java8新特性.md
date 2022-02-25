@@ -4,7 +4,7 @@ date: 2022-02-22 00:17:16
 tags: 笔记
 ---
 
-# 用途
+# lambda
 
 举例：
 
@@ -150,3 +150,88 @@ public void test5() {
         System.out.println(employee);
     }
 ```
+
+# stream Api
+
+**stream操作的三个步骤：**
+
+1、创建stream
+
+一个数据源（如：集合、数组），获取一个流
+
+2、中间操作
+
+一个中间操作链，对数据源的数据进行处理
+
+3、终止操作
+
+一个终止操作，执行中间操作链，并产生结果
+
+![stream流过程](Java8%E6%96%B0%E7%89%B9%E6%80%A7/image-20220224005635245.png)
+
+------
+
+**一、创建流**
+
+①通过`Collection `系列集合提供的`stream()`或`parallelStream()`
+
+```java
+List<String> list = new ArrayList<>();
+Stream<String> stream = list.stream();
+```
+
+②通过`Arrays`类中的`stream()`方法，创建数组流
+
+```java
+Integer[] array = new Integer[10];
+Stream<Integer> steam = Arrays.stream(array);	
+```
+
+③通过`Stream`类中的`of()`方法
+
+```java
+Stream<String> stream = stream.of("aa","bb","cc");
+```
+
+④创建无限流
+
+```
+// 迭代
+```
+
+------
+
+**二、中间操作**
+
+1、筛选
+
+①filter
+
+②limit
+
+③skit
+
+④distinct：筛选，通过流生成元素的hashCode()和equals()去除重复元素
+
+2、映射
+
+①map：接收lambda，将元素转换成其他形式或提取信息，接收一个函数作为参数，该函数会被应用到每个元素上，并将其映射成一个新的元素。
+
+```java
+// 把字符串改写成大写再输出
+
+// 提取employee中的名字
+```
+
+
+
+②flatMap：接收一个函数作为参数，将流中的每个值都换成另一个流，然后把所有流链接成一个流
+
+
+
+3、排序
+
+①sorted：自然排序
+
+②sorted(Comparator com)：定制排序
+
