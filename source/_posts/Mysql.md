@@ -1013,23 +1013,264 @@ mysql> SELECT STR_TO_DATE('2020-01-01 00:00:00','%Y-%m-%d');
 
 
 
+## 4、流程控制
+
+流程处理函数可以根据不同的条件，执行不同的处理流程，可以在SQL语句中实现不同的条件选择。MySQL中的流程处理函数主要包括IF()、IFNULL()和CASE()函数。
+
+| 函数                                                         | 用法                                            |
+| ------------------------------------------------------------ | ----------------------------------------------- |
+| IF(value,value1,value2)                                      | 如果value的值为TRUE，返回value1，否则返回value2 |
+| IFNULL(value1, value2)                                       | 如果value1不为NULL，返回value1，否则返回value2  |
+| CASE WHEN 条件1 THEN 结果1 WHEN 条件2 THEN 结果2.... [ELSE resultn] END | 相当于Java的if...else if...else...              |
+| CASE expr WHEN 常量值1 THEN 值1 WHEN 常量值1 THEN值1 .... [ELSE 值n] END | 相当于Java的switch...case...                    |
+
+```sql
+SELECT IF(1 > 0,'正确','错误')
+->正确
+
+SELECT IFNULL(null,'Hello Word')
+->Hello Word
+
+SELECT CASE
+　　WHEN 1 > 0
+　　THEN '1 > 0'
+　　WHEN 2 > 0
+　　THEN '2 > 0'
+　　ELSE '3 > 0'
+　　END
+->1 > 0
+
+SELECT CASE 1
+　　WHEN 1 THEN '我是1'
+　　WHEN 2 THEN '我是2'
+ELSE '你是谁'
+
+SELECT employee_id,salary, CASE WHEN salary>=15000 THEN '高薪'
+WHEN salary>=10000 THEN '潜力股'
+WHEN salary>=8000 THEN '屌丝'
+ELSE '草根' END "描述"
+FROM employees;
+
+SELECT oid,`status`, CASE `status` WHEN 1 THEN '未付款'
+WHEN 2 THEN '已付款'
+WHEN 3 THEN '已发货'
+WHEN 4 THEN '确认收货'
+ELSE '无效订单' END
+FROM t_order;
+
+mysql> SELECT CASE WHEN 1 > 0 THEN 'yes' WHEN 1 <= 0 THEN 'no' ELSE 'unknown' END;
++---------------------------------------------------------------------+
+| CASE WHEN 1 > 0 THEN 'yes' WHEN 1 <= 0 THEN 'no' ELSE 'unknown' END |
++---------------------------------------------------------------------+
+| yes |
++---------------------------------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT CASE WHEN 1 < 0 THEN 'yes' WHEN 1 = 0 THEN 'no' ELSE 'unknown' END;
++--------------------------------------------------------------------+
+| CASE WHEN 1 < 0 THEN 'yes' WHEN 1 = 0 THEN 'no' ELSE 'unknown' END |
++--------------------------------------------------------------------+
+| unknown |
++--------------------------------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT CASE 1 WHEN 0 THEN 0 WHEN 1 THEN 1 ELSE -1 END;
++------------------------------------------------+
+| CASE 1 WHEN 0 THEN 0 WHEN 1 THEN 1 ELSE -1 END |
++------------------------------------------------+
+| 1 |
++------------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT CASE -1 WHEN 0 THEN 0 WHEN 1 THEN 1 ELSE -1 END;
++-------------------------------------------------+
+| CASE -1 WHEN 0 THEN 0 WHEN 1 THEN 1 ELSE -1 END |
++-------------------------------------------------+
+| -1 |
++-------------------------------------------------+
+1 row in set (0.00 sec)
+SELECT employee_id,12 * salary * (1 + IFNULL(commission_pct,0))
+FROM employees;
+SELECT last_name, job_id, salary,
+CASE job_id WHEN 'IT_PROG' THEN 1.10*salary
+WHEN 'ST_CLERK' THEN 1.15*salary
+WHEN 'SA_REP' THEN 1.20*salary
+ELSE salary END "REVISED_SALARY"
+FROM employees;
+```
+
+<img src="C:\Users\obt\AppData\Roaming\Typora\typora-user-images\image-20220315162124166.png" alt="image-20220315162124166" style="zoom:150%;" />
+
+**练习：查询部门号为 10,20, 30 的员工信息, 若部门号为 10, 则打印其工资的 1.1 倍, 20 号部门, 则打印其工资的 1.2 倍, 30 号部门打印其工资的 1.3 倍数。**
+
+## 5. 加密与解密函数
+
+| 函数                        | 用法                                                         |
+| --------------------------- | ------------------------------------------------------------ |
+| PASSWORD(str)               | 返回字符串str的加密版本，41位长的字符串。加密结果不可逆，常用于用户的密码加密 |
+| MD5(str)                    | 返回字符串str的md5加密后的值，也是一种加密方式。若参数为NULL，则会返回NULL |
+| SHA(str)                    | 从原明文密码str计算并返回加密后的密码字符串，当参数为NULL时，返回NULL。SHA加密算法比MD5更加安全。 |
+| ENCODE(value,password_seed) | 返回使用password_seed作为加密密码加密value                   |
+| DECODE(value,password_seed) | 返回使用password_seed作为加密密码解密value                   |
+
+可以看到，ENCODE(value,password_seed)函数与DECODE(value,password_seed)函数互为反函数。
+
+**举例：**
+
+```sql
+mysql> SELECT PASSWORD('mysql'), PASSWORD(NULL);
++-------------------------------------------+----------------+
+| PASSWORD('mysql') | PASSWORD(NULL) |
++-------------------------------------------+----------------+
+| *E74858DB86EBA20BC33D0AECAE8A8108C56B17FA | |
++-------------------------------------------+----------------+
+1 row in set, 1 warning (0.00 sec)
+```
+
+```sql
+SELECT md5('123')
+->202cb962ac59075b964b07152d234b70
+```
+
+```sql
+mysql> SELECT ENCODE('mysql', 'mysql');
++--------------------------+
+| ENCODE('mysql', 'mysql') |
++--------------------------+
+| íg　¼　ìÉ |
++--------------------------+
+1 row in set, 1 warning (0.01 sec)
+
+mysql> SELECT DECODE(ENCODE('mysql','mysql'),'mysql');
++-----------------------------------------+
+| DECODE(ENCODE('mysql','mysql'),'mysql') |
++-----------------------------------------+
+| mysql |
++-----------------------------------------+
+1 row in set, 2 warnings (0.00 sec)
+```
+
+## 6. MySQL信息函数
+
+MySQL中内置了一些可以查询MySQL信息的函数，这些函数主要用于帮助数据库开发或运维人员更好地对数据库进行维护工作。
+
+|                         函数                          |                           用法                           |
+| :---------------------------------------------------: | :------------------------------------------------------: |
+|                       VERSION()                       |                  返回当前MySQL的版本号                   |
+|                    CONNECTION_ID()                    |               返回当前MySQL服务器的连接数                |
+|                 DATABASE()，SCHEMA()                  |             返回MySQL命令行当前所在的数据库              |
+| USER()，CURRENT_USER()、SYSTEM_USER()，SESSION_USER() | 返回当前连接MySQL的用户名，返回结果格式为“主机名@用户名” |
+|                    CHARSET(value)                     |              返回字符串value自变量的字符集               |
+|                   COLLATION(value)                    |                返回字符串value的比较规则                 |
+
+**举例：**
+
+```sql
+mysql> SELECT DATABASE();
++------------+
+| DATABASE() |
++------------+
+| test |
++------------+
+1 row in set (0.00 sec)
+mysql> SELECT DATABASE();
++------------+
+| DATABASE() |
++------------+
+| test |
++------------+
+1 row in set (0.00 sec)
+mysql> SELECT USER(), CURRENT_USER(), SYSTEM_USER(),SESSION_USER();
++----------------+----------------+----------------+----------------+
+| USER() | CURRENT_USER() | SYSTEM_USER() | SESSION_USER() |
++----------------+----------------+----------------+----------------+
+| root@localhost | root@localhost | root@localhost | root@localhost |
++----------------+----------------+----------------+----------------+
+mysql> SELECT CHARSET('ABC');
++----------------+
+| CHARSET('ABC') |
++----------------+
+| utf8mb4 |
++----------------+
+1 row in set (0.00 sec)
+mysql> SELECT COLLATION('ABC');
++--------------------+
+| COLLATION('ABC') |
++--------------------+
+| utf8mb4_general_ci |
++--------------------+
+1 row in set (0.00 sec)
+```
 
 
 
+## 7、其他函数
 
+MySQL中有些函数无法对其进行具体的分类，但是这些函数在MySQL的开发和运维过程中也是不容忽视的。
 
+| 函数                          | 用法                                                         |
+| ----------------------------- | ------------------------------------------------------------ |
+| FORMAT(value,n)               | 返回对数字value进行格式化后的结果数据。n表示四舍五入后保留到小数点后n位 |
+| CONV(value,from,to)           | 将value的值进行不同进制之间的转换                            |
+| INET_ATON(ipvalue)            | 将以点分隔的IP地址转化为一个数字                             |
+| INET_NTOA(value)              | 将数字形式的IP地址转化为以点分隔的IP地址                     |
+| BENCHMARK(n,expr)             | 将表达式expr重复执行n次。用于测试MySQL处理expr表达式所耗费的时间 |
+| CONVERT(value USINGchar_code) | 将value所使用的字符编码修改为char_code                       |
 
+**举例：**
 
-
-
-
-
-
-
-
-
-
-
-
-
+```sql
+# 如果n的值小于或者等于0，则只保留整数部分
+mysql> SELECT FORMAT(123.123, 2), FORMAT(123.523, 0), FORMAT(123.123, -2);
++--------------------+--------------------+---------------------+
+| FORMAT(123.123, 2) | FORMAT(123.523, 0) | FORMAT(123.123, -2) |
++--------------------+--------------------+---------------------+
+| 123.12 | 124 | 123 |
++--------------------+--------------------+---------------------+
+1 row in set (0.00 sec)
+mysql> SELECT CONV(16, 10, 2), CONV(8888,10,16), CONV(NULL, 10, 2);
++-----------------+------------------+-------------------+
+| CONV(16, 10, 2) | CONV(8888,10,16) | CONV(NULL, 10, 2) |
++-----------------+------------------+-------------------+
+| 10000 | 22B8 | NULL |
++-----------------+------------------+-------------------+
+1 row in set (0.00 sec)
+mysql> SELECT INET_ATON('192.168.1.100');
++----------------------------+
+| INET_ATON('192.168.1.100') |
++----------------------------+
+| 3232235876 |
++----------------------------+
+1 row in set (0.00 sec)
+# 以“192.168.1.100”为例，计算方式为192乘以256的3次方，加上168乘以256的2次方，加上1乘以256，再加上
+100。
+mysql> SELECT INET_NTOA(3232235876);
++-----------------------+
+| INET_NTOA(3232235876) |
++-----------------------+
+| 192.168.1.100 |
++-----------------------+
+1 row in set (0.00 sec)
+mysql> SELECT BENCHMARK(1, MD5('mysql'));
++----------------------------+
+| BENCHMARK(1, MD5('mysql')) |
++----------------------------+
+| 0 |
++----------------------------+
+1 row in set (0.00 sec)
+mysql> SELECT BENCHMARK(1000000, MD5('mysql'));
++----------------------------------+
+| BENCHMARK(1000000, MD5('mysql')) |
++----------------------------------+
+| 0 |
++----------------------------------+
+1 row in set (0.20 sec)
+mysql> SELECT CHARSET('mysql'), CHARSET(CONVERT('mysql' USING 'utf8'));
++------------------+----------------------------------------+
+| CHARSET('mysql') | CHARSET(CONVERT('mysql' USING 'utf8')) |
++------------------+----------------------------------------+
+| utf8mb4 | utf8 |
++------------------+----------------------------------------+
+1 row in set, 1 warning (0.00 sec)
+```
 
