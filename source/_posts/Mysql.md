@@ -276,8 +276,6 @@ FROM
 
 ## 练习
 
-【题目】 
-
 ```sql
 # 1.显示所有员工的姓名，部门号和部门名称。 
 
@@ -369,5 +367,113 @@ FROM
 	JOIN locations l ON d.location_id = l.location_id 
 WHERE
 	e.commission_pct IS NOT NULL
+```
+
+------
+
+**4.选择city在Toronto工作的员工的 last_name , job_id , department_id , department_name**
+
+```sql
+SELECT
+	e.last_name,
+	e.job_id,
+	e.department_id,
+	d.department_name 
+FROM
+	employees e
+	JOIN departments d ON e.department_id = d.department_id
+	JOIN locations l ON d.location_id = l.location_id 
+WHERE
+	l.city = 'Toronto'
+```
+
+------
+
+**5.查询员工所在的部门名称、部门地址、姓名、工作、工资，其中员工所在部门的部门名称为’Executive’** 
+
+```sql
+# 这个题可以得出结论，join on的表不需要全部和from后面的第一个表（employee）有关联
+SELECT
+	d.department_name,
+	l.street_address,
+	e.last_name,
+	j.job_id ,
+	e.salary
+FROM
+	employees e
+	JOIN departments d ON e.department_id = d.department_id
+	JOIN jobs j ON e.job_id = j.job_id
+	JOIN locations l on  d.location_id = l.location_id 
+WHERE
+	d.department_name = 'Executive'
+```
+
+------
+
+**6.选择指定员工的姓名，员工号，以及他的管理者的姓名和员工号，结果类似于下面的格式**
+
+| employees | Emp  | manager | Mgr  |
+| --------- | ---- | ------- | ---- |
+| kochhar   | 101  | king    | 100  |
+
+```sql
+# 6.选择指定员工的姓名，员工号，以及他的管理者的姓名和员工号，结果类似于下面的格式
+SELECT
+	e1.last_name AS employees,
+	e1.employee_id AS Emp,
+	e2.last_name AS manager,
+	e2.employee_id AS Mgr 
+FROM
+	employees e1,
+	employees e2 
+WHERE
+	e1.manager_id = e2.employee_id
+```
+
+------
+
+ **7.查询哪些部门没有员工** 
+
+![image-20220314151721108](C:\Users\obt\AppData\Roaming\Typora\typora-user-images\image-20220314151721108.png)
+
+```sql
+# 右外连接
+SELECT
+	d.department_name
+FROM
+	employees e
+	RIGHT JOIN departments d ON e.department_id = d.department_id 
+WHERE
+	e.department_id IS NULL
+```
+
+------
+
+**8. 查询哪个城市没有部门 **
+
+```sql
+SELECT
+	l.city 
+FROM
+	departments d
+	RIGHT JOIN locations l on d.location_id = l.location_id
+where d.location_id is null
+```
+
+------
+
+**9. 查询部门名为 Sales 或 IT 的员工信息 **
+
+```sql
+SELECT
+	employee_id,
+	last_name,
+	department_name 
+FROM
+	employees e,
+	departments d 
+WHERE
+	e.department_id = d.`department_id` 
+	AND d.`department_name` IN ( 'Sales', 'IT' );
 ```
 

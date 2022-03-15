@@ -150,3 +150,52 @@ public interface CrudRepository<T, ID extends Serializable> extends Repository<T
 }
 ```
 
+**2、分页排序**
+
+要进行分页排序查询，只需要创建接口继承`PagingAndSortingRepository`即可
+
+```java
+@Repository
+public interface Test3Rpository extends PagingAndSortingRepository<User, String> {
+}
+```
+
+使用
+
+```java
+@GetMapping("/getAllPage")
+public List<Object> getAllPage(){
+    Sort sort = Sort.by("id").descending();
+    Page<User> all = repository3.findAll(PageRequest.of(0, 4,sort));
+    List<Object> page = new ArrayList<>();
+    page.add(all.getTotalPages());
+    page.add(all.getTotalElements());
+    page.add(all.getContent());
+
+    return page;
+}
+```
+
+# 三、自定义查询
+
+**1、jpql**
+
+①@Query
+
+​	参数设置：
+
+						1. 索引： ?数字
+
+         ```java
+         @Query("from User where username = ?1")
+         List<User> findUserByUsername(String username);
+         ```
+
+						2. 具名： :参数名   结合`@Param`注解
+
+         ```java
+         @Query("from User where username = :username")
+         List<User> findUserByUsername(@Param("username") String username);
+         ```
+
+②增删改：必须加上`@Tranctional`和`@Modifying`
