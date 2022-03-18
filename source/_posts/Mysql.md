@@ -4,7 +4,7 @@ date: 2022-03-11 23:18:07
 tags: 笔记
 ---
 
-# 多表查询
+# 一、多表查询
 
 ## 1、等值链接VS非等值链接
 
@@ -434,7 +434,7 @@ WHERE
 
  **7.查询哪些部门没有员工** 
 
-![image-20220314151721108](C:\Users\obt\AppData\Roaming\Typora\typora-user-images\image-20220314151721108.png)
+![image-20220314151721108](Mysql/image-20220314151721108.png)
 
 ```sql
 # 右外连接
@@ -479,7 +479,7 @@ WHERE
 
 ------
 
-# 单行函数
+# 二、单行函数
 
 ## 1、数值函数
 
@@ -508,14 +508,14 @@ WHERE
 SELECT ABS(-123),ABS(32),SIGN(-23),SIGN(43),PI(),CEIL(32.32),CEILING(-43.23),FLOOR(32.32), FLOOR(-43.23),MOD(12,5) FROM DUAL;
 ```
 
-![image-20220315114903230](C:\Users\obt\AppData\Roaming\Typora\typora-user-images\image-20220315114903230.png)
+![image-20220315114903230](Mysql/image-20220315114903230.png)
 
 ```sql
 SELECT RAND(),RAND(),RAND(10),RAND(10),RAND(-1),RAND(-1)
 FROM DUAL;
 ```
 
-![image-20220315135552806](C:\Users\obt\AppData\Roaming\Typora\typora-user-images\image-20220315135552806.png)
+![image-20220315135552806](Mysql/image-20220315135552806.png)
 
 ```sql
 SELECT
@@ -523,7 +523,7 @@ ROUND(12.33),ROUND(12.343,2),ROUND(12.324,-1),TRUNCATE(12.66,1),TRUNCATE(12.66,-
 FROM DUAL;
 ```
 
-![image-20220315135614117](C:\Users\obt\AppData\Roaming\Typora\typora-user-images\image-20220315135614117.png)
+![image-20220315135614117](Mysql/image-20220315135614117.png)
 
 ### 2.2、角度与弧度互换函数
 
@@ -565,7 +565,7 @@ SIN(RADIANS(30)),DEGREES(ASIN(1)),TAN(RADIANS(45)),DEGREES(ATAN(1)),DEGREES(ATAN
 FROM DUAL;
 ```
 
-![image-20220315140113350](C:\Users\obt\AppData\Roaming\Typora\typora-user-images\image-20220315140113350.png)
+![image-20220315140113350](Mysql/image-20220315140113350.png)
 
 ### 2.4、指数与对数
 
@@ -689,7 +689,7 @@ CURDATE(),CURTIME(),NOW(),SYSDATE()+0,UTC_DATE(),UTC_DATE()+0,UTC_TIME(),UTC_TIM
 FROM DUAL;
 ```
 
-![image-20220315141830660](C:\Users\obt\AppData\Roaming\Typora\typora-user-images\image-20220315141830660.png)
+![image-20220315141830660](Mysql/image-20220315141830660.png)
 
 ### 3.2、日期与时间戳的转换
 
@@ -764,7 +764,7 @@ HOUR(CURTIME()),MINUTE(NOW()),SECOND(SYSDATE())
 FROM DUAL;
 ```
 
-![image-20220315143100086](C:\Users\obt\AppData\Roaming\Typora\typora-user-images\image-20220315143100086.png)
+![image-20220315143100086](Mysql/image-20220315143100086.png)
 
 ```sql
 SELECT MONTHNAME('2021-10-26'),DAYNAME('2021-10-26'),WEEKDAY('2021-10-26'),
@@ -773,7 +773,7 @@ DAYOFMONTH(NOW()),DAYOFWEEK(NOW())
 FROM DUAL;
 ```
 
-![image-20220315143129141](C:\Users\obt\AppData\Roaming\Typora\typora-user-images\image-20220315143129141.png)
+![image-20220315143129141](Mysql/image-20220315143129141.png)
 
 ### 3.4、日期的操作函数
 
@@ -783,7 +783,7 @@ FROM DUAL;
 
 EXTRACT(type FROM date)函数中type的取值与含义：
 
-![image-20220315143301002](C:\Users\obt\AppData\Roaming\Typora\typora-user-images\image-20220315143301002.png)![image-20220315143320615](C:\Users\obt\AppData\Roaming\Typora\typora-user-images\image-20220315143320615.png)
+![image-20220315143301002](Mysql/image-20220315143301002.png)![image-20220315143320615](Mysql/image-20220315143320615.png)
 
 ```sql
 SELECT EXTRACT(MINUTE FROM NOW()),EXTRACT( WEEK FROM NOW()),
@@ -791,7 +791,7 @@ EXTRACT( QUARTER FROM NOW()),EXTRACT( MINUTE_SECOND FROM NOW())
 FROM DUAL;
 ```
 
-### 3.5 时间和秒钟转换的函数
+### 3.5、时间和秒钟转换的函数
 
 | 函数                 | 用法                                                         |
 | -------------------- | ------------------------------------------------------------ |
@@ -818,7 +818,7 @@ mysql> SELECT SEC_TO_TIME(78774);
 1 row in set (0.12 sec)
 ```
 
-### 3.6 计算日期和时间的函数
+### 3.6、计算日期和时间的函数
 
 **第1组：**
 
@@ -829,7 +829,7 @@ mysql> SELECT SEC_TO_TIME(78774);
 
 上述函数中type的取值：
 
-![image-20220315143702523](C:\Users\obt\AppData\Roaming\Typora\typora-user-images\image-20220315143702523.png)
+![image-20220315143702523](Mysql/image-20220315143702523.png)
 
 **举例：**
 
@@ -958,7 +958,7 @@ mysql> SELECT TO_DAYS(NOW());
 SELECT COUNT(*) as num FROM new_user WHERE TO_DAYS(NOW())-TO_DAYS(regist_time)<=7
 ```
 
-### 3.7 日期的格式化与解析
+### 3.7、日期的格式化与解析
 
 | 函数                              | 用法                                       |
 | --------------------------------- | ------------------------------------------ |
@@ -969,11 +969,11 @@ SELECT COUNT(*) as num FROM new_user WHERE TO_DAYS(NOW())-TO_DAYS(regist_time)<=
 
 **上述非GET_FORMAT 函数中fmt参数常用的格式符：**
 
-![image-20220315144332499](C:\Users\obt\AppData\Roaming\Typora\typora-user-images\image-20220315144332499.png)
+![image-20220315144332499](Mysql/image-20220315144332499.png)
 
 **GET_FORMAT函数中date_type和format_type参数取值如下：**
 
-![image-20220315144402336](C:\Users\obt\AppData\Roaming\Typora\typora-user-images\image-20220315144402336.png)
+![image-20220315144402336](Mysql/image-20220315144402336.png)
 
 **举例：**
 
@@ -1045,18 +1045,37 @@ SELECT CASE 1
 　　WHEN 2 THEN '我是2'
 ELSE '你是谁'
 
-SELECT employee_id,salary, CASE WHEN salary>=15000 THEN '高薪'
-WHEN salary>=10000 THEN '潜力股'
-WHEN salary>=8000 THEN '屌丝'
-ELSE '草根' END "描述"
-FROM employees;
+SELECT
+	employee_id,
+	salary,
+CASE
+		
+		WHEN salary >= 15000 THEN
+		'高薪' 
+		WHEN salary >= 10000 THEN
+		'潜力股' 
+		WHEN salary >= 8000 THEN
+		'屌丝' ELSE '草根' 
+	END "描述" 
+FROM
+	employees;
 
-SELECT oid,`status`, CASE `status` WHEN 1 THEN '未付款'
-WHEN 2 THEN '已付款'
-WHEN 3 THEN '已发货'
-WHEN 4 THEN '确认收货'
-ELSE '无效订单' END
-FROM t_order;
+SELECT
+	oid,
+	`status`,
+CASE
+		`status` 
+		WHEN 1 THEN
+		'未付款' 
+		WHEN 2 THEN
+		'已付款' 
+		WHEN 3 THEN
+		'已发货' 
+		WHEN 4 THEN
+		'确认收货' ELSE '无效订单' 
+	END 
+FROM
+	t_order;
 
 mysql> SELECT CASE WHEN 1 > 0 THEN 'yes' WHEN 1 <= 0 THEN 'no' ELSE 'unknown' END;
 +---------------------------------------------------------------------+
@@ -1089,8 +1108,10 @@ mysql> SELECT CASE -1 WHEN 0 THEN 0 WHEN 1 THEN 1 ELSE -1 END;
 | -1 |
 +-------------------------------------------------+
 1 row in set (0.00 sec)
+
 SELECT employee_id,12 * salary * (1 + IFNULL(commission_pct,0))
 FROM employees;
+
 SELECT last_name, job_id, salary,
 CASE job_id WHEN 'IT_PROG' THEN 1.10*salary
 WHEN 'ST_CLERK' THEN 1.15*salary
@@ -1099,11 +1120,11 @@ ELSE salary END "REVISED_SALARY"
 FROM employees;
 ```
 
-<img src="C:\Users\obt\AppData\Roaming\Typora\typora-user-images\image-20220315162124166.png" alt="image-20220315162124166" style="zoom:150%;" />
+<img src="Mysql/image-20220315162124166.png" alt="image-20220315162124166" style="zoom:150%;" />
 
 **练习：查询部门号为 10,20, 30 的员工信息, 若部门号为 10, 则打印其工资的 1.1 倍, 20 号部门, 则打印其工资的 1.2 倍, 30 号部门打印其工资的 1.3 倍数。**
 
-## 5. 加密与解密函数
+## 5、 加密与解密函数
 
 | 函数                        | 用法                                                         |
 | --------------------------- | ------------------------------------------------------------ |
@@ -1150,7 +1171,7 @@ mysql> SELECT DECODE(ENCODE('mysql','mysql'),'mysql');
 1 row in set, 2 warnings (0.00 sec)
 ```
 
-## 6. MySQL信息函数
+## 6、 MySQL信息函数
 
 MySQL中内置了一些可以查询MySQL信息的函数，这些函数主要用于帮助数据库开发或运维人员更好地对数据库进行维护工作。
 
@@ -1288,7 +1309,7 @@ mysql> SELECT CHARSET('mysql'), CHARSET(CONVERT('mysql' USING 'utf8'));
 <last_name> earns <salary> monthly but wants <salary*3>
 ```
 
-<img src="C:\Users\obt\AppData\Roaming\Typora\typora-user-images\image-20220315170259211.png" alt="image-20220315170259211" style="zoom:50%;" />
+<img src="Mysql/image-20220315170259211.png" alt="image-20220315170259211" style="zoom:50%;" />
 
 ```sql
 # 9.使用case-when，按照下面的条件： 
@@ -1302,7 +1323,7 @@ ST_CLERK		E
 产生下面的结果:
 ```
 
-![image-20220315170457572](C:\Users\obt\AppData\Roaming\Typora\typora-user-images\image-20220315170457572.png)
+![image-20220315170457572](Mysql/image-20220315170457572.png)
 
 ------
 
@@ -1331,3 +1352,250 @@ FROM
 
 **3.将员工的姓名按首字母排序，并写出姓名的长度（length）**
 
+```sql
+SELECT
+	e.last_name,
+	LENGTH( e.last_name ) AS length 
+FROM
+	employees e 
+ORDER BY
+	e.last_name DESC
+```
+
+------
+
+**4.查询员工id,last_name,salary，并作为一个列输出，别名为OUT_PUT **
+
+```sql
+SELECT
+	CONCAT_WS( ',', e.employee_id, e.last_name, e.salary ) out_Put 
+FROM
+	employees e
+```
+
+------
+
+**5.查询公司各员工工作的年数、工作的天数，并按工作年数的降序排序** 
+
+```sql
+SELECT
+	FLOOR( DATEDIFF( CURRENT_DATE, e.hire_date )/ 365 ) work_year,
+	DATEDIFF( CURRENT_DATE, e.hire_date ) work_day 
+FROM
+	employees e 
+ORDER BY
+	work_year DESC
+```
+
+------
+
+**6.查询员工姓名，`hire_date `, `department_id`，满足以下条件：雇用时间在1997年之后，`department_id `为`80 `或` 90` 或`110`, `commission_pct`不为空**
+
+```sql
+SELECT
+	e.last_name,
+	e.hire_date,
+	e.department_id 
+FROM
+	employees e 
+#where DATE_FORMAT(hire_date,'%Y') >= '1997'
+#WHERE hire_date >= '1997-01-01' 
+#WHERE hire_date >= STR_TO_DATE('1997-01-01', '%Y-%m-%d')
+WHERE
+	DATEDIFF( '1997-01-01', e.hire_date )< 0 
+	AND e.department_id IN ( 80, 90, 110 ) 
+	AND commission_pct IS NOT NULL 
+	
+```
+
+------
+
+**7.查询公司中入职超过10000天的员工姓名、入职时间**
+
+```sql
+SELECT last_name,hire_date 
+FROM employees 
+#WHERE TO_DAYS(NOW()) - to_days(hire_date) > 10000; 
+WHERE DATEDIFF(NOW(),hire_date) > 10000;
+```
+
+------
+
+**8.做一个查询，产生下面的结果** 
+
+```html
+<last_name> earns <salary> monthly but wants <salary*3> 
+```
+
+![image-20220317160211693](Mysql/image-20220317160211693.png)
+
+```sql
+SELECT
+	CONCAT(
+		e.last_name,
+		' earns ',
+		TRUNCATE ( e.salary, 0 ),
+		' monthly but wants ',
+	TRUNCATE ( e.salary * 3, 0 )) "Dream Salary" 
+FROM
+	employees e;
+```
+
+------
+
+**9.使用case-when，按照下面的条件：** 
+
+|   job    | grade |
+| :------: | :---: |
+| AD_PRES  |   A   |
+|  ST_MAN  |   B   |
+| IT_PROG  |   C   |
+|  SA_REP  |   D   |
+| ST_CLERK |   E   |
+
+**产生下面的结果:**
+
+![image-20220317164353269](Mysql/image-20220317164353269.png)
+
+```sql
+SELECT
+	e.last_name Last_name,
+	e.job_id Job_id,
+CASE
+		e.job_id 
+		WHEN 'AD_PRES' THEN
+		'A' 
+		WHEN 'ST_MAN' THEN
+		'B' 
+		WHEN 'IT_PROG' THEN
+		'C' 
+		WHEN 'SA_REP' THEN
+		'D' 
+		WHEN 'ST_CLERK' THEN
+		'E' ELSE 'F' 
+	END "grade" 
+FROM
+	employees e;
+```
+
+# 三、聚合函数
+
+## 1、AVG和SUM函数
+
+```sql
+SELECT
+	AVG( salary ),
+	MAX( salary ),
+	MIN( salary ),
+	SUM( salary ) 
+FROM
+	employees 
+WHERE
+	job_id LIKE '%REP%';
+```
+
+<img src="Mysql/image-20220318095537606.png" alt="image-20220318095537606" style="zoom: 200%;" />
+
+可以对**数值型数据**使用`AVG `和 `SUM `函数。
+
+## 2、MIN和MAX函数
+
+```sql
+SELECT
+	MIN( hire_date ),
+	MAX( hire_date ) 
+FROM
+	employees;
+```
+
+<img src="Mysql/image-20220318095706541.png" alt="image-20220318095706541" style="zoom:200%;" />
+
+可以对**任意数据类型**的数据使用` MIN `和 `MAX `函数。
+
+## 3、COUNT
+
+`COUNT(*)`返回表中记录总数，适用于**任意数据类型**。
+
+`COUNT(expr)` 返回`expr`**不为空**的记录总数。
+
+
+
+**问题：用`count(*)`，`count(1)`，`count`(列名)谁好呢?**
+
+其实，对于MyISAM引擎的表是没有区别的。这种引擎内部有一计数器在维护着行数。
+
+`Innodb`引擎的表用`count(*)`,`count(1)`直接读行数，复杂度是`O(n)`，因为`innodb`真的要去数一遍。但好
+
+于具体的count(列名)。
+
+
+
+**问题：能不能使用`count(列名)`替换`count(*)`?**
+
+不要使用 `count(列名)`来替代` count(*)` ，` count(*) `是 `SQL92` 定义的标准统计行数的语法，跟数
+
+据库无关，跟 `NULL `和非` NULL` 无关。
+
+说明：`count(*)`会统计值为 NULL 的行，而` count(列名)`不会统计此列为` NULL `值的行。
+
+## 4、GROUP BY
+
+<img src="Mysql/image-20220318105229563.png" alt="image-20220318105229563" style="zoom:80%;" />
+
+可以使用`GROUP BY`子句将表中的数据分成若干组
+
+```sql
+SELEC Tcolumn,
+group_function ( COLUMN ) 
+FROM
+	TABLE 
+	[ WHERE CONDITION]
+	[GROUP BY group_by_expression]
+	[ORDER BY column];
+```
+
+**明确**：`WHERE`一定放在`FROM`后面
+
+在`SELECT`列表中**所有**未包含在组函数中的列都应该包含在`GROUP BY`子句中
+
+包含在`GROUP BY`子句中的列**不必**包含在`SELECT`列表中
+
+`GROUP BY` 声明在`FROM`后面、`WHERE`后面、`ORDER BY`前面、`LIMIT`前面
+
+------
+
+#### `WITH ROLLUP`新特性
+
+使用`WITH ROLLUP`关键字之后，在所有查询出的分组记录之后增加一条记录，该记录计算查询出的所有记录的总和，即统计记录数量。
+
+```sql
+SELECT
+	department_id,
+	AVG( salary ) 
+FROM
+	employees 
+WHERE
+	department_id > 80 
+GROUP BY
+	department_id WITH ROLLUP;
+```
+
+![image-20220318113640272](Mysql/image-20220318113640272.png)
+
+## 5、HAVING
+
+**基本使用**
+
+![image-20220318114201352](Mysql/image-20220318114201352.png)
+
+**过滤分组：`HAVING`子句**
+
+1.行已经被分组。
+
+2.使用了聚合函数。
+
+3.满足HAVING子句中条件的分组将被显示。
+
+4.HAVING不能单独使用，必须要跟GROUPBY一起使用。
+
+![image-20220318114252607](Mysql/image-20220318114252607.png)
