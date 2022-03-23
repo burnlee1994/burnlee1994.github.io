@@ -1,0 +1,2018 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="谷粒学院学习总结, html,css,JavaScript,JQuery">
+    <meta name="description" content="项目模块说明
+
+
+Service_edu
+后台管理模块/8001
+
+
+
+Service_cms
+首页数据Banner显示模块/8004
+
+
+Service_msm
+阿里云短信服务模块/8005
+
+
+Service_oss
+阿里云图片云存储服">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>谷粒学院学习总结 | null</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.1">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span"></span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name"></div>
+        <div class="logo-desc">
+            
+            写写画画不能拉胯
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">谷粒学院学习总结</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                                <span class="chip bg-color">笔记</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-02-20
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2022-02-22
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    7.3k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    27 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="项目模块说明"><a href="#项目模块说明" class="headerlink" title="项目模块说明"></a>项目模块说明</h1><table>
+<thead>
+<tr>
+<th align="left">Service_edu</th>
+<th align="left">后台管理模块/8001</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>Service_cms</strong></td>
+<td align="left"><strong>首页数据Banner显示模块/8004</strong></td>
+</tr>
+<tr>
+<td align="left"><strong>Service_msm</strong></td>
+<td align="left"><strong>阿里云短信服务模块/8005</strong></td>
+</tr>
+<tr>
+<td align="left"><strong>Service_oss</strong></td>
+<td align="left"><strong>阿里云图片云存储服务模块/8002</strong></td>
+</tr>
+<tr>
+<td align="left"><strong>Service_vod</strong></td>
+<td align="left"><strong>阿里云视频点播服务/8003</strong></td>
+</tr>
+<tr>
+<td align="left"><strong>Service_ucenter</strong></td>
+<td align="left"><strong>登录和注册模块（8160端口 =&gt; 不能改）</strong></td>
+</tr>
+<tr>
+<td align="left"><strong>Service_order</strong></td>
+<td align="left"><strong>微信支付模块/8007</strong></td>
+</tr>
+<tr>
+<td align="left"><strong>Service_statistics</strong></td>
+<td align="left"><strong>统计分析模块/8008</strong></td>
+</tr>
+<tr>
+<td align="left"><strong>canal-client</strong></td>
+<td align="left"><strong>数据同步模块/8009</strong></td>
+</tr>
+<tr>
+<td align="left"><strong>Api_gateway</strong></td>
+<td align="left"><strong>网关模块/8010</strong></td>
+</tr>
+<tr>
+<td align="left"><strong>Service-acl</strong></td>
+<td align="left"><strong>权限管理模块/8011</strong></td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="left">Guli_parent</th>
+<th align="left">后端代码（前后台）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>Guli_vue</strong></td>
+<td align="left"><strong>后台前端代码</strong></td>
+</tr>
+<tr>
+<td align="left"><strong>Guli_ftont</strong></td>
+<td align="left"><strong>前台前端代码</strong></td>
+</tr>
+</tbody></table>
+<h1 id="项目功能点"><a href="#项目功能点" class="headerlink" title="项目功能点"></a>项目功能点</h1><h2 id="一、后台管理系统功能"><a href="#一、后台管理系统功能" class="headerlink" title="一、后台管理系统功能"></a>一、后台管理系统功能</h2><h3 id="1、登录注册功能"><a href="#1、登录注册功能" class="headerlink" title="1、登录注册功能"></a><strong>1、登录注册功能</strong></h3><ul>
+<li>整合SpringSecurity框架</li>
+</ul>
+<h3 id="2、权限管理功能"><a href="#2、权限管理功能" class="headerlink" title="2、权限管理功能"></a><strong>2、权限管理功能</strong></h3><ul>
+<li>菜单管理：CRUD</li>
+<li>角色管理：CRUD、批量删除、为角色分配菜单</li>
+<li>用户管理：CRUD、为用户分配角色</li>
+<li>表和表的关系：使用五张表【用户表、角色表、菜单表、用户角色中间表、角色菜单中间表】</li>
+</ul>
+<h3 id="3、讲师管理模块"><a href="#3、讲师管理模块" class="headerlink" title="3、讲师管理模块"></a>3、讲师管理模块</h3><ul>
+<li>多条件分页查询（将条件值封装进对象，将对象传递到接口中）</li>
+<li>讲师列表的CRUD</li>
+<li>讲师头像上传（阿里云OSS）</li>
+</ul>
+<h3 id="4、课程分类模块"><a href="#4、课程分类模块" class="headerlink" title="4、课程分类模块"></a>4、课程分类模块</h3><ul>
+<li>添加课程分类（读取Excel里的课程数据，添加到数据库中，通过EasyExcel）</li>
+<li>课程分类列表（使用树形结构显示课程分类列表）</li>
+</ul>
+<h3 id="5、课程管理模块"><a href="#5、课程管理模块" class="headerlink" title="5、课程管理模块"></a>5、课程管理模块</h3><ul>
+<li>课程列表功能（查询所有课程并分页显示）</li>
+<li>多条件分页查询（将条件值封装进对象，将对象传递到接口中）</li>
+<li>课程列表的CRUD</li>
+<li>添加课程（课程发布的流程：填写课程基本信息、添加课程大纲（章节和小节）、课程信息确认、最终发布）</li>
+<li>添加小节时，可以上传课程视频（阿里云视频点播功能）</li>
+<li><strong>课程如何判断是否已经发布？</strong></li>
+</ul>
+<p> 通过给数据库设置字段status来判断他现在的状态（前端返回的课程 id 来修改课程的 status 并在前端显示）</p>
+<ul>
+<li><strong>课程添加过程中，中途把课程停止添加，重新去添加新的课程，如何找到之前没有发布完成的课程，继续发布呢？</strong></li>
+</ul>
+<p> 到课程列表中选择未发布的课程状态，来查询，里面会有编辑看课程信息，然后去继续编辑发布完成</p>
+<h3 id="6、统计分析模块"><a href="#6、统计分析模块" class="headerlink" title="6、统计分析模块"></a>6、统计分析模块</h3><p>生成统计数据（选择指定日期生成当天的数据）</p>
+<p>统计数据的图标显示（Echart）</p>
+<p>整合定时任务</p>
+<h3 id="7、Canal数据同步"><a href="#7、Canal数据同步" class="headerlink" title="7、Canal数据同步"></a>7、Canal数据同步</h3><p>Canal是阿里巴巴旗下的一款开源项目，纯java开发，支持MySql数据库</p>
+<p>使用MySql的binlog写入功能以及Canal实现数据同步</p>
+<h3 id="8、GateWay网关"><a href="#8、GateWay网关" class="headerlink" title="8、GateWay网关"></a>8、GateWay网关</h3><p>前期使用Nginx作为网关，后期使用GateWay作为网关（需要在Nacos注册中心进行注册）</p>
+<p><img src="/2022/02/20/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/gateway.png" alt="网关图解"></p>
+<p><strong>网关图解</strong></p>
+<h3 id="9、首页Banner模块-待做"><a href="#9、首页Banner模块-待做" class="headerlink" title="9、首页Banner模块(待做)"></a>9、首页Banner模块(待做)</h3><p>添加和删除</p>
+<h3 id="10、订单管理模块-待做"><a href="#10、订单管理模块-待做" class="headerlink" title="10、订单管理模块(待做)"></a>10、订单管理模块(待做)</h3><p>订单表的CRUD</p>
+<h2 id="二、前台系统功能"><a href="#二、前台系统功能" class="headerlink" title="二、前台系统功能"></a>二、前台系统功能</h2><h3 id="1、首页数据显示"><a href="#1、首页数据显示" class="headerlink" title="1、首页数据显示"></a>1、首页数据显示</h3><p>显示首页Banner功能（放入Redis进行缓存）<br>显示热门课程（放入Redis进行缓存）<br>显示名师（放入Redis进行缓存）</p>
+<h3 id="2、注册功能"><a href="#2、注册功能" class="headerlink" title="2、注册功能"></a>2、注册功能</h3><p>完整使用的博客地址：<a target="_blank" rel="noopener" href="https://laughingtiger.gitee.io/2022/01/25/zai-xiang-mu-zhong-zheng-he-teng-xun-yun-duan-xin-fu-wu/">https://laughingtiger.gitee.io/2022/01/25/zai-xiang-mu-zhong-zheng-he-teng-xun-yun-duan-xin-fu-wu/</a></p>
+<p>获取手机验证码（腾讯云短信功能）</p>
+<h3 id="3、登录注册功能"><a href="#3、登录注册功能" class="headerlink" title="3、登录注册功能"></a>3、登录注册功能</h3><h4 id="3-1、普通登录"><a href="#3-1、普通登录" class="headerlink" title="3.1、普通登录"></a>3.1、普通登录</h4><ul>
+<li><strong>你项目使用的是SSO（单点登录）实现登录的吗？是怎么实现的？</strong></li>
+</ul>
+<p> 我使用的是token的方式，用户登录成功后，根据相关的信息生成token，然后返回给cookie，他每次访问的时候都会从请求头中获取token的值，并解析获取用信息，判断是否已经登录</p>
+<p><img src="/2022/02/20/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F%E4%BB%8B%E7%BB%8D.png" alt="单点登录三种方式介绍"></p>
+<p><strong>单点登录三种方式介绍</strong></p>
+<ul>
+<li><p><strong>你使用什么方式生成Token的？</strong></p>
+<p>使用Jwt生成token字符串</p>
+</li>
+<li><p><strong>Jwt有几部分组成，分别为什么？</strong></p>
+<p>三部分组成，分别为：</p>
+<p>jwt头：JWT头部分是一个描述JWT元数据的JSON对象</p>
+<p>有效载荷（用户信息）：是JWT的主体内容部分，也是一个JSON对象，包含需要传递的数据。 JWT指定七个默认字段供选择</p>
+<p>签名哈希（防伪标志）：是对上面两部分数据签名，通过指定的算法生成哈希，以确保数据不会被篡改。</p>
+</li>
+<li><p><strong>你登录功能的实现流程是什么（重要）？</strong></p>
+<p>1、前端调用登录的接口，后端将用户信息封装成登录对象，登录成功会返回一个token字符串；</p>
+<p>2、前端获取后把token字符串放到cookie中；</p>
+<p>3、前端创建请求拦截器进行判断，如果cookie里包含token字符串，把token放到header中；</p>
+<p>4、前端再次调用接口获取用户信息（由于请求拦截器的存在，会将token放在请求中返回给后端），</p>
+<p> 后端从header中取到token的值并查询用户信息返回给前端，然后前端在页面中进行显示</p>
+<p><img src="/2022/02/20/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/%E7%99%BB%E5%BD%95%E9%80%BB%E8%BE%91.png" alt="登录逻辑"></p>
+<p><strong>登录逻辑</strong></p>
+</li>
+</ul>
+<h4 id="3-2、微信扫码登录"><a href="#3-2、微信扫码登录" class="headerlink" title="3.2、微信扫码登录"></a>3.2、微信扫码登录</h4><ul>
+<li><p><strong>OAuth2是什么？</strong></p>
+<p>只是一种解决方法，按照一种规则，但是具体是什么规则，没有规定。他是一种方案，但不是一种协议</p>
+<p>主要解决两个问题：</p>
+<p>1、开放系统间授权</p>
+<p>2、分布式访问问题</p>
+</li>
+<li><p><strong>你是如何获取扫码人微信信息的？</strong></p>
+<p>扫码后，微信会返回两个值code和state；</p>
+<p>拿着这个code去请求微信的固定地址，获得两个值access_token访问凭证和openid（每个微信的唯一表示）；</p>
+<p>然后拿着这两个再去请求微信的一个固定地址获取到扫码人的信息</p>
+</li>
+</ul>
+<h4 id="3-3、用户注册"><a href="#3-3、用户注册" class="headerlink" title="3.3、用户注册"></a>3.3、用户注册</h4><ul>
+<li><p><strong>用户注册的详细流程？</strong></p>
+<p>前端填写信息后这些信息会发送到后端（验证码会存在Redis中）；</p>
+<p>后端接收前端的请求参数并将数据封装成对象（用户昵称、手机号、密码、验证码），并进行参数校验（手机号、密码、验证码）；</p>
+<p>校验成功后将用户信息加入数据库，前端根据返回的状态码判断是否注册成功，若成功则跳转到登录页面；</p>
+</li>
+</ul>
+<h3 id="4、名师列表功能"><a href="#4、名师列表功能" class="headerlink" title="4、名师列表功能"></a>4、名师列表功能</h3><ul>
+<li>名师列表分页显示</li>
+</ul>
+<h3 id="5、名师详情功能"><a href="#5、名师详情功能" class="headerlink" title="5、名师详情功能"></a>5、名师详情功能</h3><ul>
+<li>点击某个讲师后显示讲师详情（讲师信息和主讲课程）</li>
+</ul>
+<h3 id="6、课程列表功能"><a href="#6、课程列表功能" class="headerlink" title="6、课程列表功能"></a>6、课程列表功能</h3><ul>
+<li><p>点击首页课程后显示对应的八条课程（条件查询带分页）</p>
+</li>
+<li><p>具体细节：</p>
+<p>前端封装查询对象VO（或修改查询对象VO），后端根据查询对象VO拼接查询条件，查询后返回分页数据，前端进行显示</p>
+</li>
+<li><p>点击一级分类，显示对应的二级分类，查询数据(二级联动效果)</p>
+</li>
+</ul>
+<h3 id="7、课程详情功能"><a href="#7、课程详情功能" class="headerlink" title="7、课程详情功能"></a>7、课程详情功能</h3><ul>
+<li>课程信息显示（包含基本信息、讲师信息、分类信息、大纲信息 =&gt; 自定义sql查询）</li>
+</ul>
+<h3 id="8、课程详细视频在线播放功能"><a href="#8、课程详细视频在线播放功能" class="headerlink" title="8、课程详细视频在线播放功能"></a>8、课程详细视频在线播放功能</h3><ul>
+<li><p>点击具体某个小节后可在线播放</p>
+</li>
+<li><p>具体细节：</p>
+<p>后端创建接口获取视频播放凭证；</p>
+<p>前端进行页面跳转并进行播放。</p>
+</li>
+</ul>
+<h3 id="9、课程评论功能"><a href="#9、课程评论功能" class="headerlink" title="9、课程评论功能"></a>9、课程评论功能</h3><ul>
+<li><p>可对课程进行相应的评论</p>
+</li>
+<li><p>具体细节：</p>
+<p>前端封装评论对象VO，后端接收查询对象VO;</p>
+<p>后端创建分页查询课程评论的接口以及添加评论的接口；</p>
+<p>前端调用接口获取数据并在页面进行显示</p>
+</li>
+</ul>
+<h3 id="10、课程支付功能"><a href="#10、课程支付功能" class="headerlink" title="10、课程支付功能"></a>10、课程支付功能</h3><h4 id="一、后端的四个接口："><a href="#一、后端的四个接口：" class="headerlink" title="一、后端的四个接口："></a>一、后端的四个接口：</h4><ul>
+<li>生成课程订单</li>
+<li>根据订单id查询订单信息</li>
+<li>生成微信支付二维码</li>
+<li>查询订单支付状态</li>
+</ul>
+<h4 id="二、支付流程："><a href="#二、支付流程：" class="headerlink" title="二、支付流程："></a>二、支付流程：</h4><ul>
+<li>课程详情页点击立即购买 =&gt; 获取订单号 =&gt; 跳转订单显示页面</li>
+</ul>
+<p><img src="/2022/02/20/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/order.png" alt="获取订单号并跳转详情页"></p>
+<p><strong>获取订单号并跳转详情页</strong></p>
+<ul>
+<li>订单详情页显示支付详情 =&gt; 点击去支付跳转到支付页面</li>
+</ul>
+<p>javascript</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token function">toPay</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>                  
+    <span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">{</span>path<span class="token punctuation">:</span><span class="token string">'/pay/'</span><span class="token operator">+</span><span class="token keyword">this</span><span class="token punctuation">.</span>orderNo<span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li><p>支付详情页面（页面渲染完成后每三秒去调用一次查询订单状态的方法 =&gt; 支付成功跳转到课程详情页面）</p>
+<p>后端接口</p>
+<p>java</p>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@ApiOperation</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"根据订单号查询订单支付状态"</span><span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/queryPayStatus/{orderNo}"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> ResultVo <span class="token function">queryPayStatus</span><span class="token punctuation">(</span><span class="token annotation punctuation">@PathVariable</span> String orderNo<span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+        Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span>String<span class="token operator">></span> map <span class="token operator">=</span> tPayLogService<span class="token punctuation">.</span><span class="token function">queryPayStatus</span><span class="token punctuation">(</span>orderNo<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>map<span class="token operator">==</span>null<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">return</span> ResultVo<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">message</span><span class="token punctuation">(</span><span class="token string">"支付出错了"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment" spellcheck="true">//如果返回的map不为空，通过map获取订单的状态</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>map<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"trade_state"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span><span class="token string">"SUCCESS"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">//支付成功 => 添加记录到支付表里，并更新订单表的状态</span>
+            tPayLogService<span class="token punctuation">.</span><span class="token function">updateOrderStatus</span><span class="token punctuation">(</span>map<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> ResultVo<span class="token punctuation">.</span><span class="token function">ok</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">message</span><span class="token punctuation">(</span><span class="token string">"支付成功"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">return</span> ResultVo<span class="token punctuation">.</span><span class="token function">ok</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">message</span><span class="token punctuation">(</span><span class="token string">"支付中"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">code</span><span class="token punctuation">(</span><span class="token number">25000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre>
+<p>前端创建响应拦截器（根据响应码进行页面跳转）</p>
+<p>javascript</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// http response 拦截器</span>
+service<span class="token punctuation">.</span>interceptors<span class="token punctuation">.</span>response<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>
+  response <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//debugger</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>code <span class="token operator">==</span> <span class="token number">28004</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"response.data.resultCode是28004"</span><span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true">// 返回 错误代码-1 清除ticket信息并跳转到登录页面</span>
+        <span class="token comment" spellcheck="true">//debugger</span>
+        window<span class="token punctuation">.</span>location<span class="token punctuation">.</span>href<span class="token operator">=</span><span class="token string">"/login"</span>
+        <span class="token keyword">return</span>
+  <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>code <span class="token operator">!==</span> <span class="token number">20000</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//25000：订单支付中，不做任何提示</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>code <span class="token operator">!=</span> <span class="token number">25000</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token function">Message</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            message<span class="token punctuation">:</span> response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>message <span class="token operator">||</span> <span class="token string">'error'</span><span class="token punctuation">,</span>
+            type<span class="token punctuation">:</span> <span class="token string">'error'</span><span class="token punctuation">,</span>
+            duration<span class="token punctuation">:</span> <span class="token number">5</span> <span class="token operator">*</span> <span class="token number">1000</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> response<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+  error <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//返回接口返回的错误信息</span>
+    <span class="token keyword">return</span> Promise<span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span>error<span class="token punctuation">.</span>response<span class="token punctuation">)</span> 
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>前端页面代码</p>
+</li>
+</ul>
+<p>javascript</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
+  <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"cart py-container"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>主内容<span class="token operator">--</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"checkout py-container pay"</span><span class="token operator">></span>
+      <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"checkout-tit"</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>h4 <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"fl tit-txt"</span><span class="token operator">></span>
+          <span class="token operator">&lt;</span>span <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"success-icon"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>span
+          <span class="token operator">></span><span class="token operator">&lt;</span>span <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"success-info"</span>
+            <span class="token operator">></span>订单提交成功，请您及时付款！订单 号：<span class="token punctuation">{</span><span class="token punctuation">{</span>
+              payObj<span class="token punctuation">.</span>out_trade_no
+            <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>span
+          <span class="token operator">></span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>h4<span class="token operator">></span>
+        <span class="token operator">&lt;</span>span <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"fr"</span>
+          <span class="token operator">></span><span class="token operator">&lt;</span>em <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"sui-lead"</span><span class="token operator">></span>应付金额：<span class="token operator">&lt;</span><span class="token operator">/</span>em
+          <span class="token operator">></span><span class="token operator">&lt;</span>em <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"orange money"</span><span class="token operator">></span>￥<span class="token punctuation">{</span><span class="token punctuation">{</span> payObj<span class="token punctuation">.</span>total_fee <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>em<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>span
+        <span class="token operator">></span>
+        <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"clearfix"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+      <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"checkout-steps"</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"fl weixin"</span><span class="token operator">></span>微信支付<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+        <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"fl sao"</span><span class="token operator">></span>
+          <span class="token operator">&lt;</span>p <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"red"</span><span class="token operator">></span>请使用微信扫一扫。<span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">></span>
+          <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"fl code"</span><span class="token operator">></span>
+            <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> <span class="token operator">&lt;</span>img id<span class="token operator">=</span><span class="token string">"qrious"</span> src<span class="token operator">=</span><span class="token string">"~/assets/img/erweima.png"</span> alt<span class="token operator">=</span><span class="token string">""</span><span class="token operator">></span> <span class="token operator">--</span><span class="token operator">></span>
+            <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> <span class="token operator">&lt;</span>qriously value<span class="token operator">=</span><span class="token string">"weixin://wxpay/bizpayurl?pr=R7tnDpZ"</span><span class="token punctuation">:</span>size<span class="token operator">=</span><span class="token string">"338"</span><span class="token operator">/</span><span class="token operator">></span> <span class="token operator">--</span><span class="token operator">></span>
+            <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>code_url为二维码地址，这里需要通过一个vue的组件【qriously】显示<span class="token operator">--</span><span class="token operator">></span>
+            <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>执行npm install vue<span class="token operator">-</span>qriously下载组件<span class="token operator">--</span><span class="token operator">></span>
+            <span class="token operator">&lt;</span>qriously <span class="token punctuation">:</span>value<span class="token operator">=</span><span class="token string">"payObj.code_url"</span> <span class="token punctuation">:</span>size<span class="token operator">=</span><span class="token string">"338"</span> <span class="token operator">/</span><span class="token operator">></span>
+            <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"saosao"</span><span class="token operator">></span>
+              <span class="token operator">&lt;</span>p<span class="token operator">></span>请使用微信扫一扫<span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">></span>
+              <span class="token operator">&lt;</span>p<span class="token operator">></span>扫描二维码支付<span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">></span>
+            <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+          <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+        <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"clearfix"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+        <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> <span class="token operator">&lt;</span>p<span class="token operator">></span><span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token string">"pay.html"</span> target<span class="token operator">=</span><span class="token string">"_blank"</span><span class="token operator">></span><span class="token operator">></span> 其他支付方式<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">></span> <span class="token operator">--</span><span class="token operator">></span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">></span>
+
+<span class="token operator">&lt;</span>script<span class="token operator">></span>
+<span class="token keyword">import</span> orderApi <span class="token keyword">from</span> <span class="token string">"@/api/order"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+
+    <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">{</span>
+            orderNo<span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+            payObj<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+            timer1<span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+    <span class="token function">created</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>orderNo <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$route<span class="token punctuation">.</span>params<span class="token punctuation">.</span>orderNo<span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//生成二维码</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">createQRcode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+    methods<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//生成二维码</span>
+        <span class="token function">createQRcode</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            orderApi<span class="token punctuation">.</span><span class="token function">createWxQRcode</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>orderNo<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span>resp<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>payObj <span class="token operator">=</span> resp<span class="token punctuation">.</span>data<span class="token punctuation">.</span>data<span class="token punctuation">;</span> 
+            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token comment" spellcheck="true">//根据订单号，查询支付的状态</span>
+        <span class="token function">queryPayStatus</span><span class="token punctuation">(</span>out_trade_no<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            orderApi<span class="token punctuation">.</span><span class="token function">getPayStatus</span><span class="token punctuation">(</span>out_trade_no<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span>resp<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>resp<span class="token punctuation">.</span>data<span class="token punctuation">.</span>success<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token comment" spellcheck="true">//如果支付成功，清除定时器</span>
+                    <span class="token function">clearInterval</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>timer1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token comment" spellcheck="true">//提示</span>
+                    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$message</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+                        type<span class="token punctuation">:</span> <span class="token string">"success"</span><span class="token punctuation">,</span>
+                        message<span class="token punctuation">:</span> <span class="token string">"支付成功!"</span><span class="token punctuation">,</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token comment" spellcheck="true">//跳转到课程详细页面观看视频</span>
+                    <span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">{</span> path<span class="token punctuation">:</span> <span class="token string">"/course/"</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>payObj<span class="token punctuation">.</span>course_id <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    
+    <span class="token comment" spellcheck="true">//每个三秒去调用一次查询订单状态的方法</span>
+    <span class="token comment" spellcheck="true">//在页面渲染之后调用</span>
+    <span class="token function">mounted</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>timer1 <span class="token operator">=</span> <span class="token function">setInterval</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">queryPayStatus</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>payObj<span class="token punctuation">.</span>out_trade_no<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">3000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+</code></pre>
+<h4 id="三、你的微信支付功能的流程你说说？"><a href="#三、你的微信支付功能的流程你说说？" class="headerlink" title="三、你的微信支付功能的流程你说说？"></a>三、你的微信支付功能的流程你说说？</h4><ul>
+<li>如果课程是收费课程，点击立即购买，生成课程订单；</li>
+<li>点击订单页面中的去支付，生成微信支付二维码；</li>
+<li>使用微信区扫秒二维码实现支付；</li>
+<li>支付之后，每个3秒查询支付状态（是否支付成功），如果没有支付成功就等待；</li>
+<li>如果支付成功之后，修改订单状态，向支付表中添加记录</li>
+</ul>
+<h1 id="项目技术点"><a href="#项目技术点" class="headerlink" title="项目技术点"></a>项目技术点</h1><h2 id="一、前后端分离开发"><a href="#一、前后端分离开发" class="headerlink" title="一、前后端分离开发"></a>一、前后端分离开发</h2><ul>
+<li>项目开发模式为前后端分离开发</li>
+<li>后端写接口，前端调后端接口得到数据并显示</li>
+</ul>
+<h2 id="二、项目使用【前端】技术"><a href="#二、项目使用【前端】技术" class="headerlink" title="二、项目使用【前端】技术"></a>二、项目使用【前端】技术</h2><h3 id="1、vue"><a href="#1、vue" class="headerlink" title="1、vue"></a>1、vue</h3><p>基本语法</p>
+<ul>
+<li>指令：</li>
+</ul>
+<pre><code>v-bind` 简写`：`
+`v-model`
+`v-for`
+`v-if`
+`v-html
+</code></pre>
+<ul>
+<li>生命周期：</li>
+</ul>
+<p><code>created()</code>，页面渲染之前<br><code>mounted()</code>，页面渲染之后</p>
+<ul>
+<li><p>绑定事件：</p>
+<p><code>-v-on</code> 简写<code>@</code></p>
+</li>
+<li><p>ES6规范，通过babel转成ES5，框架自带</p>
+</li>
+</ul>
+<h3 id="2、Element-UI"><a href="#2、Element-UI" class="headerlink" title="2、Element-UI"></a>2、Element-UI</h3><ul>
+<li><code>Vue.js</code>的后台组件库，方便程序员进行页面快速布局和构建</li>
+</ul>
+<h3 id="3、Nodejs"><a href="#3、Nodejs" class="headerlink" title="3、Nodejs"></a>3、Nodejs</h3><ul>
+<li>Js运行环境，不需要浏览器直接运行代码，模拟服务器效果(<code>java</code>需要<code>jdk</code> =&gt; <code>javascript</code> 需要 <code>Node.js</code>)</li>
+</ul>
+<h3 id="4、NPM"><a href="#4、NPM" class="headerlink" title="4、NPM"></a>4、NPM</h3><ul>
+<li><p>包管理工具，类似Maven，管理前端<code>js</code>依赖</p>
+</li>
+<li><p>npm命令</p>
+<p><code>npm init</code> 初始化</p>
+<p><code>npm install</code> 依赖名</p>
+</li>
+</ul>
+<h3 id="5、Babel"><a href="#5、Babel" class="headerlink" title="5、Babel"></a>5、Babel</h3><ul>
+<li><p>转码器，ES6转换ES5代码（编写Es6代码 =&gt; 转化Es5代码后运行）</p>
+</li>
+<li><p>Es6代码浏览器兼容性很差</p>
+</li>
+</ul>
+<h3 id="6、前端模块化"><a href="#6、前端模块化" class="headerlink" title="6、前端模块化"></a>6、前端模块化</h3><ul>
+<li><p>通过一个页面或js去调用另外一个页面的js文件的方法</p>
+</li>
+<li><p>ES6语法不能在<code>node.js</code>中直接使用，需要通过babel编译成ES5再执行</p>
+</li>
+</ul>
+<h3 id="7、后台系统用vue-admin-templete"><a href="#7、后台系统用vue-admin-templete" class="headerlink" title="7、后台系统用vue-admin-templete"></a>7、后台系统用vue-admin-templete</h3><ul>
+<li>基于vue、Element-ui</li>
+</ul>
+<h3 id="8、前台系统用Nuxt"><a href="#8、前台系统用Nuxt" class="headerlink" title="8、前台系统用Nuxt"></a>8、前台系统用Nuxt</h3><ul>
+<li><p>基于vue、3000端口</p>
+</li>
+<li><p>服务器渲染技术</p>
+</li>
+</ul>
+<h3 id="9、Echarts"><a href="#9、Echarts" class="headerlink" title="9、Echarts"></a>9、Echarts</h3><ul>
+<li>图表工具（百度捐给Aprch）</li>
+</ul>
+<h3 id="10、Webpaack"><a href="#10、Webpaack" class="headerlink" title="10、Webpaack"></a>10、Webpaack</h3><ul>
+<li>webpack是一个前端资源加载/打包工具。根据模块的依赖关系进行静态分析，然后将这些模块按照指定的规则生成对应的静态资源</li>
+</ul>
+<h2 id="三、项目使用【后端】技术【1】"><a href="#三、项目使用【后端】技术【1】" class="headerlink" title="三、项目使用【后端】技术【1】"></a>三、项目使用【后端】技术【1】</h2><h3 id="1、微服务架构"><a href="#1、微服务架构" class="headerlink" title="1、微服务架构"></a>1、微服务架构</h3><ul>
+<li>将项目拆分为独立的模块，每个模块都有其端口号，模块与模块之间没有关系，是通过远程调用实现</li>
+</ul>
+<h3 id="2、SpringBoot"><a href="#2、SpringBoot" class="headerlink" title="2、SpringBoot"></a>2、SpringBoot</h3><ul>
+<li>SpringBoot是什么东西？</li>
+</ul>
+<pre><code>SpringBoot本质就是spring，只是快速构建Spring工程的脚手架
+</code></pre>
+<p>细节：</p>
+<ul>
+<li><p>启动类包扫描机制</p>
+<p>从外往里扫，也可以设置扫描机制，通过<code>@ComponentScan(包路径)</code></p>
+</li>
+<li><p>配置类</p>
+</li>
+</ul>
+<p> SpringBoot配置文件类型</p>
+<p> <code>.properties</code></p>
+<p> <code>.yaml</code></p>
+<ul>
+<li>配置文件加载机制</li>
+</ul>
+<p> 先bootstrap<br>​ 再properties或yaml<br>​ 再对应的环境如：dev、test、prod</p>
+<h3 id="3、SpringCloud"><a href="#3、SpringCloud" class="headerlink" title="3、SpringCloud"></a>3、SpringCloud</h3><h4 id="一、SpringCloud简介"><a href="#一、SpringCloud简介" class="headerlink" title="一、SpringCloud简介"></a>一、SpringCloud简介</h4><p>Spring Cloud是一系列框架的集合。它利用Spring Boot的开发便利性简化了分布式系统基础设施的开 发，如服务发现、服务注册、配置中心、消息总线、负载均衡、 熔断器、数据监控等，都可以用Spring Boot的开发风格做到一键启动和部署。Spring并没有重复制造轮子，它只是将目前各家公司开发的比较 成熟、经得起实际考验的服务框架组合起来，通过SpringBoot风格进行再封装屏蔽掉了复杂的配置和实 现原理，最终给开发者留出了一套简单易懂、易部署和易维护的分布式系统开发工具包</p>
+<h4 id="二、Spring-Cloud和Spring-Boot是什么关系"><a href="#二、Spring-Cloud和Spring-Boot是什么关系" class="headerlink" title="二、Spring Cloud和Spring Boot是什么关系"></a>二、Spring Cloud和Spring Boot是什么关系</h4><p>Spring Boot 是 Spring 的一套快速配置脚手架，可以基于Spring Boot 快速开发单个微服务，Spring Cloud是一个基于Spring Boot实现的开发工具；Spring Boot专注于快速、方便集成的单个微服务个 体，Spring Cloud关注全局的服务治理框架； Spring Boot使用了默认大于配置的理念，很多集成方案已 经帮你选择好了，能不配置就不配置，Spring Cloud很大的一部分是基于Spring Boot来实现，必须基 于Spring Boot开发。可以单独使用Spring Boot开发项目，但是Spring Cloud离不开 Spring Boot。</p>
+<h4 id="三、Spring-Cloud相关基础服务组件"><a href="#三、Spring-Cloud相关基础服务组件" class="headerlink" title="三、Spring Cloud相关基础服务组件"></a>三、Spring Cloud相关基础服务组件</h4><p>基础服务组件</p>
+<ul>
+<li>服务发现——Netflix Eureka （Nacos）</li>
+<li>服务调用——Netflix Feign</li>
+<li>熔断器——Netflix Hystrix</li>
+<li>服务网关——Spring Cloud GateWay</li>
+<li>分布式配置——Spring Cloud Config （Nacos）</li>
+<li>消息总线 —— Spring Cloud Bus （Nacos）</li>
+<li>负载均衡 ——Ribbon</li>
+</ul>
+<p>项目中，使用阿里巴巴Nacos，代替springcloud一些组件</p>
+<ul>
+<li><p>Nacos</p>
+<p>注册中心</p>
+<p>配置中心</p>
+</li>
+<li><p>Feign</p>
+<p>服务调用，一个微服务调用另外一个微服务，实现远程调用</p>
+</li>
+<li><p>Hystrix</p>
+<p>熔断器</p>
+</li>
+<li><p>Gateway网关，之前是zuul / Nginx</p>
+</li>
+</ul>
+<h4 id="三、SpringCloud版本"><a href="#三、SpringCloud版本" class="headerlink" title="三、SpringCloud版本"></a>三、SpringCloud版本</h4><p><img src="/2022/02/20/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/springcloud.png" alt="springcloud版本号"></p>
+<p><strong>springcloud版本号</strong></p>
+<h3 id="4、MyBatisPlus"><a href="#4、MyBatisPlus" class="headerlink" title="4、MyBatisPlus"></a>4、MyBatisPlus</h3><ul>
+<li>MyBatisPlus就是对MyBatis的增强，本身并没改变</li>
+<li>自动填充</li>
+<li>乐观锁</li>
+<li>逻辑删除</li>
+<li>性能分析</li>
+<li>代码生成器</li>
+</ul>
+<h3 id="5、EasyExcel"><a href="#5、EasyExcel" class="headerlink" title="5、EasyExcel"></a>5、EasyExcel</h3><ul>
+<li>阿里巴巴提供操作Excel工具，效率高，代码简洁</li>
+</ul>
+<h3 id="6、Swagger"><a href="#6、Swagger" class="headerlink" title="6、Swagger"></a>6、Swagger</h3><p>前后端分离开发交互文档</p>
+<ul>
+<li><p>给一些比较难以理解的属性或者接口上增加注释信息</p>
+</li>
+<li><p>接口文档实时更新</p>
+</li>
+<li><p>可以在线测试</p>
+</li>
+</ul>
+<p>项目正式发布的时候需要关闭Swagger</p>
+<h2 id="三、项目使用【后端】技术【2】"><a href="#三、项目使用【后端】技术【2】" class="headerlink" title="三、项目使用【后端】技术【2】"></a>三、项目使用【后端】技术【2】</h2><h3 id="1、SpringSecurity"><a href="#1、SpringSecurity" class="headerlink" title="1、SpringSecurity"></a>1、SpringSecurity</h3><h5 id="1-1、框架介绍"><a href="#1-1、框架介绍" class="headerlink" title="1.1、框架介绍"></a>1.1、框架介绍</h5><p>Spring 是一个非常流行和成功的 Java 应用开发框架。Spring Security 基于 Spring 框架，提供了一套Web 应用安全性的完整解决方案。</p>
+<p>一般来说，Web 应用的安全性包括<code>用户认证</code>（Authentication）和<code>用户授权</code>（Authorization）两个部分。<br>（1）用户认证指的是：验证某个用户是否为系统中的合法主体，也就是说用户能否访问该系统。用户认证一般要求用户提供用户名和密码。系统通过校验用户名和密码来完成认证过程。<strong>说人话就是登录认证</strong><br>（2）用户授权指的是验证某个用户是否有权限执行某个操作。在一个系统中，不同用户所具有的权限是不同的。比如对一个文件来说，有的用户只能进行读取，而有的用户可以进行修改。一般来说，系统会为不同的用户分配不同的角色，而每个角色则对应一系列的权限。<strong>判断是普通用户还是管理员基于功能访问权限</strong></p>
+<p>Spring Security其实就是用<code>filter</code>，多请求的路径进行过滤。<br>（1）如果是基于Session，那么Spring-security会对cookie里的sessionid进行解析，找到服务器存储的sesion信息，然后判断当前用户是否符合请求的要求。<br>（2）如果是token，则是解析出token，然后将当前请求加入到Spring-security管理的权限信息中去</p>
+<h5 id="1-2、认证与授权实现思路"><a href="#1-2、认证与授权实现思路" class="headerlink" title="1.2、认证与授权实现思路"></a>1.2、认证与授权实现思路</h5><p>如果系统的模块众多，每个模块都需要就行授权与认证，所以我们<strong>选择基于token的形式进行授权与认证</strong>，用户根据用户名密码认证成功，然后获取当前用户角色的一系列权限值，并以<strong>用户名为key，权限列表为value的形式存入redis缓存中</strong>，根据用户名相关信息生成token返回，浏览器将token记录到cookie中，每次<strong>调用api接口都默认将token携带到header请求头中</strong>，Spring-security解析header头获取token信息，解析token获取当前用户名，根据用户名就可以从redis中获取权限列表，这样Spring-security就能够判断当前请求是否有权限访问</p>
+<h5 id="1-3、认证与授权流程"><a href="#1-3、认证与授权流程" class="headerlink" title="1.3、认证与授权流程"></a>1.3、认证与授权流程</h5><ul>
+<li><p>用户名密码认证成功，获取用户的权限值；并以用户名为Key，权限列表为Value的形式存储在Redis缓存中</p>
+</li>
+<li><p>根据用户名相关信息返回token，浏览器将token记录到cookie中，没请求都会在请求头中携带token</p>
+</li>
+<li><p>请求中，Spring-security会解析请求头中的token，并获取用户名；</p>
+</li>
+<li><p>根据用户名为key，去redis中获取value值权限列表</p>
+</li>
+<li><p>根据权限列表来判断用户是否有权限访问</p>
+</li>
+<li><p>图解</p>
+<p><img src="/2022/02/20/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/SpringSecurity%E6%8E%88%E6%9D%83%E8%BF%87%E7%A8%8B.png" alt="SpringSecurity授权过程"></p>
+<p><strong>SpringSecurity授权过程</strong></p>
+<p><img src="/2022/02/20/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/SpringSecurity%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B.png" alt="SpringSecurity代码执行过程"></p>
+<p><strong>SpringSecurity代码执行过程</strong></p>
+</li>
+</ul>
+<h3 id="2、Redis"><a href="#2、Redis" class="headerlink" title="2、Redis"></a>2、Redis</h3><ul>
+<li><p>首页数据通过Redis做缓存</p>
+</li>
+<li><p>注册（通过手机号）过程中将后端生成的验证码存储在redis中（设置5分钟过期）</p>
+</li>
+<li><p>Redis数据类型：</p>
+<ul>
+<li>Set</li>
+<li>List</li>
+<li>Hash</li>
+<li>String</li>
+<li>zset</li>
+</ul>
+</li>
+<li><p><strong>Redis做缓存，什么样的数据适合使用Redis做缓存？</strong></p>
+<p>经常访问，但不经常修改的数据；如主页</p>
+</li>
+</ul>
+<h3 id="3、Nginx"><a href="#3、Nginx" class="headerlink" title="3、Nginx"></a>3、Nginx</h3><ul>
+<li>方向代理服务器</li>
+<li>请求转发、负载均衡、动静分离</li>
+</ul>
+<h3 id="4、OAuth2-JWT"><a href="#4、OAuth2-JWT" class="headerlink" title="4、OAuth2+JWT"></a>4、OAuth2+JWT</h3><ul>
+<li>针对特定问题的解决方案</li>
+<li>Jwt制定一种规则生成字符串，包括：三部分<ul>
+<li>JWT头</li>
+<li>有效载荷（用户信息）</li>
+<li>防伪标志</li>
+</ul>
+</li>
+</ul>
+<h3 id="5、HttpClient"><a href="#5、HttpClient" class="headerlink" title="5、HttpClient"></a>5、HttpClient</h3><ul>
+<li>模拟浏览器，不借助浏览器发送请求响应的工具</li>
+<li>项目中应用场景：微信登录获取扫描人信息，微信支付查询支付状态</li>
+</ul>
+<h3 id="6、Cookie"><a href="#6、Cookie" class="headerlink" title="6、Cookie"></a>6、Cookie</h3><ul>
+<li>特点：<ul>
+<li>客户端技术，存储在浏览器、客户端中</li>
+<li>每次发送请求，都会带着cookie</li>
+<li>cookie有默认有效时长，默认关闭浏览器就不存在了，也可以设置时长，会话级别</li>
+</ul>
+</li>
+</ul>
+<h3 id="7、Cannal"><a href="#7、Cannal" class="headerlink" title="7、Cannal"></a>7、Cannal</h3><ul>
+<li>Canal是阿里巴巴旗下的一款开源项目，纯java开发，支持MySql数据库</li>
+<li>使用MySql的binlog写入功能以及Canal实现数据同步</li>
+</ul>
+<h3 id="8、Git"><a href="#8、Git" class="headerlink" title="8、Git"></a>8、Git</h3><ul>
+<li>代码提交到远程的Git仓库中</li>
+<li>进行项目的版本控制</li>
+</ul>
+<h3 id="9、Docker"><a href="#9、Docker" class="headerlink" title="9、Docker"></a>9、Docker</h3><ul>
+<li>容器化技术</li>
+<li>项目中使用的Mysql数据库和Redis均为容器构建</li>
+</ul>
+<h3 id="10、Jenkins"><a href="#10、Jenkins" class="headerlink" title="10、Jenkins"></a>10、Jenkins</h3><ul>
+<li>自动化构建和部署</li>
+</ul>
+<h1 id="项目遇到的问题"><a href="#项目遇到的问题" class="headerlink" title="项目遇到的问题"></a>项目遇到的问题</h1><h2 id="1、前端问题—路由切换问题"><a href="#1、前端问题—路由切换问题" class="headerlink" title="1、前端问题—路由切换问题"></a>1、前端问题—路由切换问题</h2><ul>
+<li>vue-router导航切换时，如果两个路由都渲染同一个组件，组件会重复使用，组件的生命周期钩子（created）不会再被调用，使得一些数据无法根据path的改变得到更新。</li>
+<li>即多次路由跳转到同一个页面，created()只执行一次，后面在进行跳转时不会执行</li>
+<li>解决方案：通过vue监听机制解决</li>
+</ul>
+<p><img src="/2022/02/20/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/017fbbf1e05791c2e75b6e20010384b8.png" alt="image-20210311194336555"></p>
+<p><strong>image-20210311194336555</strong></p>
+<h2 id="2、前端问题—ES6模块化运行问题"><a href="#2、前端问题—ES6模块化运行问题" class="headerlink" title="2、前端问题—ES6模块化运行问题"></a>2、前端问题—ES6模块化运行问题</h2><p>ES6代码在浏览器的兼容性比较差，使用Babel把ES6代码转换为ES5的代码运行</p>
+<h2 id="3、MyBatisPlus生成19位id值问题"><a href="#3、MyBatisPlus生成19位id值问题" class="headerlink" title="3、MyBatisPlus生成19位id值问题"></a>3、MyBatisPlus生成19位id值问题</h2><ul>
+<li>问题描述：mp生成的ip值为19位，js处理数据类型值时，只处理16位</li>
+<li>解决方案：将Long改为String类型</li>
+</ul>
+<h2 id="4、跨域问题"><a href="#4、跨域问题" class="headerlink" title="4、跨域问题"></a>4、跨域问题</h2><ul>
+<li>问题描述：访问协议（http、https）、ip地址、端口号（9528、9001）</li>
+</ul>
+<p> 三者有任何一个不一样，就会产生跨域问题</p>
+<ul>
+<li>解决方案：</li>
+</ul>
+<p> 在controller添加注解@CrossOrigin<br>​ 通过Gateway网关解决，写一个配置类</p>
+<p> 上面只能使用一个，不然会失效</p>
+<p> 前端请求先经过网关 =&gt; 网关分发请求到对应接口 =&gt; 从接口获取数据并返回</p>
+<h2 id="5、413问题"><a href="#5、413问题" class="headerlink" title="5、413问题"></a>5、413问题</h2><ul>
+<li><p>问题描述：上传视频时，nginx有上传视频大小限制，如果超过，就会出现413错误</p>
+<p>413描述：请求体过大</p>
+</li>
+<li><p>解决方案：在Nginx里配置客户端提交文件大小</p>
+</li>
+<li><p>响应状态码：413、跨域403、重定向302</p>
+</li>
+</ul>
+<h2 id="6、Maven加载问题"><a href="#6、Maven加载问题" class="headerlink" title="6、Maven加载问题"></a>6、Maven加载问题</h2><ul>
+<li>问题描述：Maven加载项目时，不会加载src-java文件夹里面的xml类型文件</li>
+</ul>
+<p><img src="/2022/02/20/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/cuowu.png" alt="错误详情"></p>
+<p><strong>错误详情</strong></p>
+<ul>
+<li><p>解决方案：</p>
+<p>1、复制xml文件到target目录</p>
+<p>2、在maven中配置，在properties配置文件中指定xml文件夹</p>
+</li>
+</ul>
+<h2 id="7、前端字符串转化为js对象问题"><a href="#7、前端字符串转化为js对象问题" class="headerlink" title="7、前端字符串转化为js对象问题"></a>7、前端字符串转化为js对象问题</h2><ul>
+<li><p>问题描述：登录过程中前端将用户信息放进cookie时，无法将js对象直接放进cookie里面</p>
+</li>
+<li><p><img src="/2022/02/20/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/cuowu-164535401062915.png" alt="img"></p>
+<p>​                                                                                            <strong>错误详情</strong></p>
+</li>
+<li><p>问题解决:</p>
+<p>加入cookie时将 js对象转化为字符串</p>
+<p><img src="/2022/02/20/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/solution.png" alt="错误详情"></p>
+<p><strong>错误详情</strong></p>
+</li>
+</ul>
+<h1 id="项目面试总结"><a href="#项目面试总结" class="headerlink" title="项目面试总结"></a>项目面试总结</h1><h2 id="1、项目描述"><a href="#1、项目描述" class="headerlink" title="1、项目描述"></a>1、项目描述</h2><h3 id="项目具体描述"><a href="#项目具体描述" class="headerlink" title="项目具体描述"></a>项目具体描述</h3><p>1、项目总体介绍</p>
+<p> 示例：在线教育项目采用B2C商业模块、使用微服务架构，前后端分离开发</p>
+<p>2、项目功能模块（你做的模块）</p>
+<p> 示例：在线教育项目分为前台系统（用户）和后台系统（管理员）</p>
+<p> 前台系统包括：首页数据显示、课程列表和详情、课程支付、课程视频播放、微信登录、微信支付等待</p>
+<p> 后台系统包括：权限管理、课程管理、统计分析、课程分类管理等等</p>
+<p> 我在这个项目主要负责前台微信登录和支付，负责后台权限管理和统计分析</p>
+<p>3、项目涉及的技术栈</p>
+<p>示例：项目采用前后端分离开发</p>
+<p> 前端技术包括：Vue、element-ui、nuxt、babel等等</p>
+<p> 后端技术包括：SpringBoot、SpringCloud、EasyExcel、Redis等等</p>
+<p> 第三方技术包含：阿里云OSS、视频点播、短信服务等等</p>
+<h2 id="2、这是一个项目还是一个产品"><a href="#2、这是一个项目还是一个产品" class="headerlink" title="2、这是一个项目还是一个产品"></a>2、这是一个项目还是一个产品</h2><p>是一个产品；项目是从0开始搭建的</p>
+<h2 id="3、测试要求"><a href="#3、测试要求" class="headerlink" title="3、测试要求"></a>3、测试要求</h2><p>首页和视频详情页qps单机qps要求 2000+</p>
+<p>经常用每秒查询率来衡量域名系统服务器的机器的性能，其即为QPS</p>
+<p>QPS = 并发量 / 平均响应时间</p>
+<h2 id="4、企业中的项目（产品）开发流程"><a href="#4、企业中的项目（产品）开发流程" class="headerlink" title="4、企业中的项目（产品）开发流程"></a>4、企业中的项目（产品）开发流程</h2><p>一个中大型项目的开发流程：</p>
+<p>1、需求调研（产品经理）</p>
+<p>2、需求评审（产品/设计/前端/后端/测试/运营）</p>
+<p>3、立项（项目经理、品管）</p>
+<p>4、UI设计</p>
+<p>5、开发</p>
+<ul>
+<li>架构、数据库设计、API文档、MOCK数据、开发、单元测试</li>
+<li>前端</li>
+<li>后端</li>
+</ul>
+<p>6、前后端联调</p>
+<p>7、项目测试：黑盒白盒、压力测试（qps）、loadrunner</p>
+<p>8、bug修改</p>
+<p>9、回归测试</p>
+<p>10、运维和部署上线</p>
+<p>11、灰度发布</p>
+<p>12、全量发布</p>
+<p>13、维护和运营</p>
+<h2 id="5、系统中都有那些角色？数据库是怎么设计的？"><a href="#5、系统中都有那些角色？数据库是怎么设计的？" class="headerlink" title="5、系统中都有那些角色？数据库是怎么设计的？"></a>5、系统中都有那些角色？数据库是怎么设计的？</h2><p>前台：会员（学员）</p>
+<p>后台：系统管理员、运营人员</p>
+<p>后台分库，每个微服务一个独立的数据库，使用了分布式id生成器</p>
+<h2 id="6、视频点播是怎么实现的（流媒体你们是怎么实现的）"><a href="#6、视频点播是怎么实现的（流媒体你们是怎么实现的）" class="headerlink" title="6、视频点播是怎么实现的（流媒体你们是怎么实现的）"></a>6、视频点播是怎么实现的（流媒体你们是怎么实现的）</h2><p>我们直接接入了阿里云的云视频点播。云平台上的功能包括视频上传、转码、加密、智能审核、监控统计等。</p>
+<p>还包括视频播放功能，阿里云还提供了一个视频播放器。</p>
+<h2 id="7、前后端联调经常遇到的问题："><a href="#7、前后端联调经常遇到的问题：" class="headerlink" title="7、前后端联调经常遇到的问题："></a>7、前后端联调经常遇到的问题：</h2><p>1、请求方式post、get</p>
+<p>2、json、x-wwww-form-urlencoded混乱的错误</p>
+<p>3、后台必要的参数，前端省略了</p>
+<p>4、数据类型不匹配</p>
+<p>5、空指针异常</p>
+<p>6、分布式系统中分布式id生成器生成的id 长度过大（19个字符长度的整数），js无法解析（js智能解析16个长度：2的53次幂）id策略改成 ID_WORKER_STR</p>
+<h2 id="8、前后端分离项目中的跨域问题是如何解决的"><a href="#8、前后端分离项目中的跨域问题是如何解决的" class="headerlink" title="8、前后端分离项目中的跨域问题是如何解决的"></a>8、前后端分离项目中的跨域问题是如何解决的</h2><p>后端服务器配置：我们的项目中是通过Spring注解解决跨域的 @CrossOrigin</p>
+<p>也可以使用nginx反向代理、httpClient、网关</p>
+<h2 id="9、说说你做了哪个部分、遇到了什么问题、怎么解决的"><a href="#9、说说你做了哪个部分、遇到了什么问题、怎么解决的" class="headerlink" title="9、说说你做了哪个部分、遇到了什么问题、怎么解决的"></a>9、说说你做了哪个部分、遇到了什么问题、怎么解决的</h2><p>问题1：</p>
+<p>分布式id生成器在前端无法处理，总是在后三位进行四舍五入。</p>
+<p>分布式id生成器生成的id是19个字符的长度，前端javascript脚本对整数的处理能力只有2的53次方，也就是最多只能处理16个字符解决的方案是把id在程序中设置成了字符串的性质</p>
+<p>问题2：</p>
+<p>项目迁移到Spring-Cloud的时候，经过网关时，前端传递的cookie后端一只获取不了，看了cloud中zuul的源码，发现向下游传递数据的时候，zull默认过滤了敏感信息，将cookie过滤掉了解决的方案是在配置文件中将请求头的过滤清除掉，使cookie可以向下游传递</p>
+<h2 id="10、分布式系统的id生成策略"><a href="#10、分布式系统的id生成策略" class="headerlink" title="10、分布式系统的id生成策略"></a>10、分布式系统的id生成策略</h2><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/haoxinyue/p/5208136.html">https://www.cnblogs.com/haoxinyue/p/5208136.html</a></p>
+<h2 id="11、项目组有多少人，人员如何组成？"><a href="#11、项目组有多少人，人员如何组成？" class="headerlink" title="11、项目组有多少人，人员如何组成？"></a>11、项目组有多少人，人员如何组成？</h2><p>不要太教条，说说人一任职务</p>
+<h2 id="12、分布式系统的CAP原理"><a href="#12、分布式系统的CAP原理" class="headerlink" title="12、分布式系统的CAP原理"></a>12、分布式系统的CAP原理</h2><p><strong>CAP定理：</strong></p>
+<p>指的是在一个分布式系统中，Consistency（一致性）、 Availability（可用性）、Partition tolerance（分区容错性），三者不可同时获得。<br><strong>一致性（C）：</strong>在分布式系统中的所有数据备份，在同一时刻是否同样的值。（所有节点在同一时间的数据完全一致，越多节点，数据同步越耗时）<br><strong>可用性（A）：</strong>负载过大后，集群整体是否还能响应客户端的读写请求。（服务一直可用，而且是正常响应时间）<br><strong>分区容错性（P）：</strong>分区容错性，就是高可用性，一个节点崩了，并不影响其它的节点（100个节点，挂了几个，不影响服务，越多机器越好）</p>
+<p><strong>CA 满足的情况下，P不能满足的原因：</strong></p>
+<p>数据同步(C)需要时间，也要正常的时间内响应(A)，那么机器数量就要少，所以P就不满足</p>
+<p><strong>CP 满足的情况下，A不能满足的原因：</strong></p>
+<p>数据同步(C)需要时间, 机器数量也多(P)，但是同步数据需要时间，所以不能再正常时间内响应，所以A就 不满足</p>
+<p><strong>AP 满足的情况下，C不能满足的原因：</strong></p>
+<p>机器数量也多(P)，正常的时间内响应(A)，那么数据就不能及时同步到其他节点，所以C不满足</p>
+<p><strong>注册中心选择的原则：</strong></p>
+<p>Zookeeper：CP设计，保证了一致性，集群搭建的时候，某个节点失效，则会进行选举行的leader，或者半数以上节点不可用，则无法提供服务，因此可用性没法满足Eureka：AP原则，无主从节点，一个节点挂了，自动切换其他节点可以使用，去中心化</p>
+<p><strong>结论：</strong></p>
+<p>分布式系统中P,肯定要满足，所以我们只能在一致性和可用性之间进行权衡</p>
+<p>如果要求一致性，则选择zookeeper，如金融行业</p>
+<p>如果要求可用性，则Eureka，如教育、电商系统</p>
+<p>没有最好的选择，最好的选择是根据业务场景来进行架构设计</p>
+<h2 id="13、前端渲染和后端渲染有什么区别"><a href="#13、前端渲染和后端渲染有什么区别" class="headerlink" title="13、前端渲染和后端渲染有什么区别"></a>13、前端渲染和后端渲染有什么区别</h2><p>前端渲染是返回 json 给前端，通过 javascript 将数据绑定到页面上</p>
+<p>后端渲染是在服务器端将页面生成直接发送给服务器，有利于 SEO 的优化</p>
+<h2 id="14、能画一下系统架构图吗"><a href="#14、能画一下系统架构图吗" class="headerlink" title="14、能画一下系统架构图吗"></a>14、能画一下系统架构图吗</h2><p><img src="/2022/02/20/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/56bf34b2936ea4c62ecd9d7d5215d877.png" alt="image-20210311201817399"></p>
+<p><strong>image-20210311201817399</strong></p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">BurnLee</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://burnlee1994.github.io/2022/02/20/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/">http://burnlee1994.github.io/2022/02/20/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">BurnLee</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                                    <span class="chip bg-color">笔记</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+    <div class="livere-card card" data-aos="fade-up">
+    <!-- 来必力City版安装代码 -->
+    <div id="lv-container" class="card-content" data-id="city" data-uid="MTAyMC81NTUyOC8zMTk5NQ==">
+        <script type="text/javascript">
+            (function (d, s) {
+                let j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') {
+                    return;
+                }
+
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript。</noscript>
+    </div>
+    <!-- City版安装代码已完成 -->
+</div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/02/20/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="谷粒学院学习记录">
+                        
+                        <span class="card-title">谷粒学院学习记录</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-02-20
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            BurnLee
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">笔记</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/02/18/%E5%A4%9A%E7%BB%88%E7%AB%AF%E4%BD%BF%E7%94%A8hexo%E4%B8%8A%E4%BC%A0/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="多终端使用hexo上传">
+                        
+                        <span class="card-title">多终端使用hexo上传</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-18
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            BurnLee
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%95%99%E7%A8%8B/">
+                        <span class="chip bg-color">教程</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022</span>
+            
+            <a href="/about" target="_blank">BurnLee</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">22.3k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/burnlee1994" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:690390340@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=690390340" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 690390340" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+     
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/star.js"><\/script>');
+            }
+        </script>
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
